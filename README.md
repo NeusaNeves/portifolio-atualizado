@@ -33,7 +33,7 @@ Olá! Meu nome é Neusa Neves, sou desenvolvedora Front-End em transição de ca
 ## Contato
 
 - GitHub: [https://github.com/NeusaNeves](https://github.com/NeusaNeves)  
-- LinkedIn: [https://www.linkedin.com/in/neusa-neves-81947b253/](https://www.linkedin.com/in/neusa-neves-81947b253/)  
+- LinkedIn: [https://www.linkedin.com/in/neusa-neves-81947b253/]([https://linkedin.com/in/seu-usuario](https://www.linkedin.com/in/neusa-neves-81947b253/))  
 - WhatsApp: [https://wa.me/5511985837200](https://wa.me/5511985837200)  
 - E-mail: neusanneves13@gmail.com  
 
