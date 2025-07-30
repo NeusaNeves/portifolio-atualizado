@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+<style>
+.tooltip {
+  position: relative;
+  display: inline-block;
+  cursor: help;
+  font-weight: bold;
+  color: #4e7c59;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 250px;
+  background-color: #222;
+  color: #f4f1de;
+  text-align: center;
+  border-radius: 8px;
+  padding: 10px;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%; 
+  left: 50%;
+  margin-left: -125px;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+</style>
+</head>
+
+<body>
+ <div class="projeto">
+  <p class="tooltip">
+    Calculadora de IMC
+    <span class="tooltiptext">
+      Calculadora interativa feita com HTML, CSS e JavaScript. O usuário insere peso e altura e recebe o resultado do IMC com a classificação. Projeto focado em lógica, eventos e formulários.
+    </span>
+  </p>
+</div>
+  
+</body>
+</html>
+
+

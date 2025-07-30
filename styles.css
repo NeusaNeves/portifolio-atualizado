@@ -1,0 +1,851 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kalam:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+/* --- Cores Base --- */
+
+:root {
+  --cor-clara: #f4f1de;
+  --cor-escura: #222222;
+  --preto: #000000;
+  --verde-retro: #7bbf64;
+  --verde-hover: #4e7c59;
+}
+
+/* --- Estilos Globais e do Corpo (Body) --- */
+html {
+  /* Fundo com gradiente suave usando a paleta retrô */
+  background: linear-gradient(
+    135deg,
+    #4e7c59,  /* verde escuro */
+    #b4d7a8,  /* verde claro */
+    #f4f1de   /* bege */
+  );
+  scroll-behavior: smooth;
+}
+
+body {
+  max-width: 1200px;
+  margin: auto;
+  font-family: 'Press Start 2P', cursive;
+  background-color: #222222; /* cinza escuro para contraste */
+  color: #f4f1de; /* bege para o texto */
+  text-align: center;
+}
+
+header {
+  background-color: rgba(78, 124, 89, 0.9); /* verde escuro translúcido */
+  backdrop-filter: blur(8px);
+  color: #f4f1de; /* bege claro */
+  padding: 15px 30px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 3px solid #b4d7a8; /* verde claro */
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+  text-transform: uppercase;
+  font-size: 12px;
+  flex-wrap: wrap;
+}
+
+.menu {
+  display: flex;
+  gap: 20px; /* espaço entre os botões */
+}
+
+.hamburger {
+  display: none;
+  font-size: 35px;
+  background: none;
+  border: none;
+  color: var(--cor-clara);
+  cursor: pointer;
+}
+
+header h1 {
+  font-size: 1.6em;
+  margin: 0 20px;
+  flex-grow: 1;
+  text-align: left;
+  color: #f4f1de; /* bege */
+  text-shadow: 3px 3px #4e7c59; /* sombra verde escuro */
+  letter-spacing: 1px;
+}
+
+h2 {
+  font-size: 14pt;
+  color: #f4f1de; /* bege para harmonizar */
+}
+
+
+header .btn {
+  background-color: #b4d7a8; /* verde claro */
+  color: #222222; /* cinza escuro para contraste */
+  padding: 10px 20px;
+  border-radius: 12px; /* cantos arredondados, mas menos suave para estilo retrô */
+  text-decoration: none;
+  font-size: 1em;
+  font-family: 'Press Start 2P', cursive; /* fonte pixelada para o botão */
+  font-weight: bold;
+  transition: all 0.2s ease-in-out;
+  border: 3px solid #4e7c59; /* verde escuro para borda marcada */
+  box-shadow:
+  3px 3px 0 #000000, /* sombra pixelada */
+  inset 0 0 0 2px #f4f1de; /* detalhe interno */
+  cursor: pointer;
+}
+
+header .btn:hover {
+  background-color: #4e7c59; /* verde escuro no hover */
+  color: #f4f1de; /* bege no texto */
+  box-shadow:
+    1px 1px 0 #000000,
+    inset 0 0 0 2px #b4d7a8;
+  transform: translateY(2px);
+}
+
+/* CSS do curriculum */
+
+.cute-retro-folder {
+  position: relative;
+  width: 90px;
+  height: 80px;
+  cursor: pointer;
+  text-decoration: none;
+  display: block;
+  margin-top: 30px;
+  align-self: center;
+  flex-shrink: 0;
+  background-color: #f4f1de; /* bege da paleta */
+  border: 3px solid #4e7c59; /* verde escuro */
+  box-shadow:
+    5px 5px 0 #222222, /* sombra pixelada */
+    inset 0 0 0 2px #b4d7a8; /* borda interna */
+  border-radius: 6px 6px 12px 12px; /* cantos arredondados estilo retrô */
+  transition: transform 0.2s ease-in-out;
+}
+
+.cute-retro-folder:hover {
+  transform: translate(-4px, -4px);
+  box-shadow:
+    7px 7px 0 #222222,
+    inset 0 0 0 2px #4e7c59;
+}
+
+.folder-top {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 60%;
+  height: 20px;
+  background-color: #b4d7a8; /* verde claro */
+  border: 3px solid #4e7c59; /* verde escuro */
+  border-bottom: none;
+  border-radius: 7px 7px 0 0;
+  transform-origin: bottom center;
+  transition: transform 0.2s ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 2px 2px 0 #222222; /* sombra pixelada */
+  z-index: 2;
+}
+
+.folder-base {
+  position: absolute;
+  top: 18px;
+  left: 0;
+  width: 100%;
+  height: 62px;
+  background-color: #f4f1de; /* bege */
+  border: 3px solid #b4d7a8; /* verde claro */
+  border-radius: 0 10px 10px 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 4px 4px 0 #222222; /* sombra pixelada forte */
+  z-index: 1;
+}
+
+.folder-label {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 6pt;
+  line-height: 1rem;
+  color: #222222; /* cinza escuro para o texto */
+  margin-top: 5px;
+  text-shadow:
+    0.5px 0.5px 0 #ffffff99; /* sombra branca levemente translúcida para dar relevo */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 90%;
+}
+
+/* Ícone do documento que aparece */
+.document-icon {
+  position: absolute;
+  font-size: 2.2em;
+  color: #4e7c59; /* verde escuro */
+  text-shadow:
+    1px 1px 0 #222222; /* sombra pixelada */
+  opacity: 0;
+  transform: translateY(15px) scale(0.5);
+  transition: all 0.3s ease-out;
+}
+
+
+/* Tooltip (balão de ajuda) */
+.folder-tooltip {
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #b4d7a8; /* verde claro */
+  border: 1.5px dashed #4e7c59; /* verde escuro */
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-family: 'Press Start 2P', cursive; /* pixelada para retrô */
+  font-size: 0.7em;
+  color: #222222; /* cinza escuro */
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s ease, visibility 0.2s ease, top 0.2s ease;
+  z-index: 10;
+  box-shadow:
+    2px 2px 0 #000000; /* sombra pixelada */
+}
+
+/* Triângulo do tooltip */
+.folder-tooltip::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 6px;
+  border-style: solid;
+  border-color: #b4d7a8 transparent transparent transparent; /* verde claro */
+}
+
+/* --- Efeitos de HOVER e CLICK --- */
+
+.cute-retro-folder:hover .folder-top {
+  transform: rotateX(10deg);
+  transition: transform 0.2s ease;
+}
+
+.cute-retro-folder:hover .folder-tooltip {
+  opacity: 1;
+  visibility: visible;
+  top: -40px;
+}
+
+.cute-retro-folder:active .folder-top {
+  transform: rotateX(20deg);
+  transition: transform 0.1s ease;
+}
+
+.cute-retro-folder:active .document-icon {
+  opacity: 1;
+  transform: translateY(-5px) scale(0.9);
+  transition: all 0.3s ease;
+}
+
+/* FIM CSS Curriculum */
+
+.hero {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 3rem 1rem;
+  gap: 2rem;
+  background: #222222; /* cinza escuro da paleta */
+  position: relative;
+  overflow: hidden;
+  border-bottom: 5px dashed #b4d7a8; /* verde claro */
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.7); /* sombra mais forte para estilo retrô */
+  color: #f4f1de; /* bege */
+  font-family: 'Press Start 2P', cursive; /* fonte pixelada */
+}
+
+.code-preview {
+  flex: 1;
+  min-width: 250px;
+  max-width: 400px;
+  margin: 20px;
+  border: 5px solid #4e7c59; /* verde escuro */
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 8px 8px 0px #b4d7a8; /* sombra sólida estilo pixel art */
+  position: relative;
+  padding: 5px;
+  background-color: #000000; /* preto */
+}
+
+.code-preview img {
+  width: 100%;
+  display: block;
+  border-radius: 5px;
+  object-fit: cover;
+  height: 200px;
+  image-rendering: pixelated; /* efeito pixelado */
+}
+
+.floating-img-container {
+  position: relative;
+  display: inline-block;
+}
+
+.floating-img {
+  position: relative;
+  top: 30px;
+  left: 20px;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 3rem;
+  box-shadow: 4px 4px 0px #222222; /* sombra pixelada sólida */
+  animation: float 3s ease-in-out infinite;
+  cursor: grabbing;
+  image-rendering: pixelated; /* reforçando pixel art */
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.info-overlay {
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #b4d7a8; /* verde claro */
+  border: 2px dashed #4e7c59; /* verde escuro */
+  padding: 6px 10px;
+  border-radius: 6px;
+  font-family: 'Press Start 2P', cursive; /* fonte pixelada */
+  font-size: 10px;
+  color: #222222; /* cinza escuro */
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
+  z-index: 10;
+  box-shadow:
+    3px 3px 0 #000000; /* sombra pixelada */
+}
+
+/* Triângulo do balão de fala */
+.info-overlay::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 30%;
+  transform: translateX(-50%);
+  border-width: 8px;
+  border-style: solid;
+  border-color: #b4d7a8 transparent transparent transparent; /* verde claro */
+  filter: drop-shadow(1px 1px 0 #000); /* sombra para o triângulo */
+}
+
+.floating-img-container:hover .info-overlay {
+  opacity: 1;
+  visibility: visible;
+  bottom: calc(100% - 10px);
+  transform: scale(1.1) rotate(2deg);
+  box-shadow:
+    5px 5px 0 #000000; /* sombra pixelada forte */
+}
+
+/* Caixa estilo retro */
+.caixa-retro {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #f4f1de; /* bege */
+  border: 4px solid #222222; /* cinza escuro */
+  padding: 20px;
+  width: 800px;
+  z-index: 1000;
+  box-shadow: 8px 8px 0px #000000; /* sombra pixelada */
+  font-family: 'Press Start 2P', monospace;
+  color: #222222; /* cinza escuro para texto */
+  text-align: center;
+}
+
+.meu-destaque {
+  background-color: #ffb3c6; 
+  color: #800040;          
+  padding: 2px 6px;         
+  border-radius: 4px;      
+}
+
+.caixa-conteudo h2 {
+  font-size: 14px;
+  margin-bottom: 10px;
+  color: #4e7c59; /* verde escuro */
+  text-shadow:
+    1px 1px 0 #b4d7a8; /* sombra verde claro para relevo */
+}
+
+.caixa-conteudo p {
+  font-size: 10px;
+  margin-bottom: 20px;
+  line-height: 1.5;
+  color: #222222; /* cinza escuro */
+}
+
+.caixa-conteudo button {
+  padding: 8px 12px;
+  font-family: 'Press Start 2P', monospace;
+  background-color: #222222; /* cinza escuro */
+  color: #f4f1de; /* bege */
+  border: 3px solid #4e7c59; /* verde escuro */
+  cursor: pointer;
+  box-shadow:
+  3px 3px 0 #000000; /* sombra pixelada */
+  transition: background-color 0.2s ease;
+}
+
+.caixa-conteudo button:hover {
+  background-color: #4e7c59; /* verde escuro */
+  color: #f4f1de; /* bege */
+  border-color: #b4d7a8; /* verde claro */
+}
+
+
+.profile-card {
+  background-color: #f4f1de; /* bege */
+  color: #222222; /* cinza escuro */
+  padding: 25px;
+  border-radius: 12px;
+  border: 3px solid #4e7c59; /* verde escuro */
+  box-shadow: 8px 8px 0px #b4d7a8; /* sombra verde claro pixelada */
+  margin: 20px;
+  flex: 1;
+  min-width: 280px;
+  max-width: 350px;
+  transition: all 0.3s ease-in-out;
+  font-family: 'Press Start 2P', cursive;
+}
+
+.profile-card:hover {
+  transform: translateY(-5px) rotate(-1deg);
+  box-shadow: 12px 10px 0px #b4d7a8;
+}
+
+.profile-card h2 {
+  font-family: 'Luckiest Guy', cursive;
+  font-size: 1.8em;
+  color: #4e7c59; /* verde escuro */
+  margin-bottom: 10px;
+  text-shadow: 1px 1px 0px #222222; /* sombra pixelada escura */
+}
+
+.profile-card p {
+  font-size: 10px;
+  line-height: 16pt;
+  margin-bottom: 20px;
+  color: #555555; /* cinza médio */
+}
+
+.profile-card .icons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.profile-card .icons a {
+  display: inline-block;
+  color: #4e7c59; /* verde escuro */
+  text-decoration: none;
+  font-size: 2.5em;
+  transition: color 0.3s ease, transform 0.3s ease;
+  text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.1);
+}
+
+.profile-card .icons a:hover {
+  color: #b4d7a8; /* verde claro no hover */
+  transform: translateY(-5px);
+  text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.2);
+}
+
+/* --- Containers de Projetos e Skills --- */
+.projects-skills-container, .projects-skills-container-skill {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  margin-top: 50px;
+  padding: 20px;
+  background-color: rgba(244, 241, 222, 0.85); /* bege semi-transparente */
+  border-radius: 15px;
+  box-shadow: 0 5px 10px rgba(34, 34, 34, 0.2); /* sombra suave escura */
+}
+
+.projects {
+  color: #222222; /* cinza escuro */
+  flex: 1;
+  min-width: 300px;
+  background-color: #f4f1de; /* bege */
+  padding: 25px;
+  border-radius: 15px;
+  border: 3px solid #4e7c59; /* verde escuro */
+  box-shadow: 8px 8px 0px #b4d7a8; /* sombra verde claro */
+  position: relative;
+  font-family: 'Press Start 2P', cursive;
+}
+
+.projects h2 {
+  color: #4e7c59; /* verde escuro */
+  font-size: 1.5em;
+  margin-bottom: 30px;
+  position: relative;
+  padding-bottom: 10px;
+  text-shadow: 1px 1px 0 #22222291;
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+#caixa, #caixa1, #caixa2 {
+  display: block;
+  width: 250px;
+  height: 150px;
+  padding: 20px;
+  text-align: center;
+  background: #f4f1de; /* bege */
+  border: 4px solid #222222; /* cinza escuro */
+  box-shadow: 8px 8px 0px #000000; /* sombra pixelada */
+  font-family: 'Press Start 2P', monospace;
+  cursor: grabbing;
+  transition: all 0.2s ease-in-out;
+  position: relative;
+}
+
+#caixa img, #caixa1 img, #caixa2 img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  display: block;
+  transition: opacity 0.3s ease-in-out;
+  image-rendering: pixelated; /* reforça o pixel art */
+}
+
+.project-grid p[id^="texto-projeto"] {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 93%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px;
+  box-sizing: border-box;
+  font-family: 'Press Start 2P', cursive; /* fonte pixelada */
+  font-size: 10px;
+  margin-bottom: 20px;
+  line-height: 1.5;
+  color: #222222; /* cinza escuro */
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  text-align: center;
+  text-shadow: 1px 1px 0 #222222; /* sombra pixelada no texto */
+}
+
+.project-grid span[id^="caixa"]:hover p[id^="texto-projeto"] {
+  opacity: 1;
+}
+
+
+.skills {
+  color: #222222; /* cinza escuro */
+  flex: 1;
+  min-width: 100px;
+  background-color: #f4f1de; /* bege */
+  padding: 25px;
+  border-radius: 15px;
+  border: 3px solid #4e7c59; /* verde escuro */
+  box-shadow: 8px 8px 0px #b4d7a8; /* sombra verde claro */
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: 'Press Start 2P', cursive;
+}
+
+.skills .title-skill {
+  color: #4e7c59; /* verde escuro */
+  font-size: 1.5em;
+  margin-bottom: 30px;
+  position: relative;
+  padding-bottom: 10px;
+  text-shadow: 1px 1px 0 #22222291;
+}
+
+.skills-bars {
+  max-width: 300px;
+  width: 80%;
+  text-align: left;
+}
+
+.skills-bars .bar {
+  margin-bottom: 10px;
+}
+
+.skills-bars .bar span {
+  display: block;
+  font-family: 'Press Start 2P', cursive;
+  font-weight: bold;
+  color: #222222;
+  margin-bottom: 10px;
+  font-size: 10pt;
+  text-shadow: 1px 1px 0 #b4d7a8;
+}
+
+.skills-bars .progress {
+  height: 12px;
+  background-color: #f4f1de; /* verde claro */
+  border-radius: 8px;
+  border: 4px solid #222222; /* cinza escuro */
+  box-shadow: 8px 8px 0px #000000; /* sombra pixelada */
+  font-family: 'Press Start 2P', monospace;
+  cursor: pointer;
+  overflow: hidden;
+  position: relative;
+}
+
+.skills-bars .progress::before {
+  content: '';
+  display: block;
+  height: 100%;
+  background: linear-gradient(to right, #4e7c59, #a4c5f0); /* gradiente verde escuro para azul claro */
+  border-radius: 6px;
+  width: 0;
+  transition: width 1.5s ease-in-out;
+  box-shadow: 1px 1px 0 #222222 inset;
+}
+
+
+.progress.html::before { width: 90%; }
+.progress.css::before { width: 85%; }
+.progress.js::before { width: 50%; }
+.progress.python::before { width: 30%; }
+.progress.php::before { width: 30%; }
+
+.extra-skills {
+  margin-top: 50px;
+  padding: 50px 20px;
+  background-color: rgba(244, 241, 222, 0.85); /* bege semi-transparente */
+  border-radius: 15px;
+  box-shadow: 0 5px 10px rgba(34, 34, 34, 0.2); /* sombra escura suave */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 25px;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  font-family: 'Press Start 2P', cursive;
+}
+
+.extra-skills::-webkit-scrollbar {
+  display: none;
+}
+
+.skill-icon {
+  min-width: 95px;
+  min-height: 80px;
+  background: #f4f1de; /* bege */
+  border: 4px solid #222222; /* cinza escuro */
+  padding: 15px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: all 0.2s ease-in-out;
+  flex-shrink: 0;
+  text-align: center;
+  box-shadow: 8px 8px 0px #000000; /* sombra pixelada */
+
+}
+
+.skill-icon:hover {
+  transform: translateY(-5px) rotate(1deg);
+  box-shadow: 8px 8px 0px var(--cor-escura);
+  cursor: grabbing;
+}
+
+.skill-icon i {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  color: #4e7c59; 
+  text-shadow: 1px 1px 0 #22222288;
+}
+
+.skill-icon span {
+  text-align: center;
+  color: #222222;
+  font-size: 0.7em;
+  white-space: nowrap;
+  font-family: 'Press Start 2P', cursive;
+  text-shadow: 1px 1px 0 #b4d7a8; /* sombra leve verde claro */
+}
+
+/* Área dos contatos */
+
+.contact {
+  margin-top: 60px;
+  padding: 30px 20px;
+  background-color: #f4f1de; /* bege semi-transparente */
+  border-radius: 15px;
+  box-shadow: 0 5px 10px rgba(34, 34, 34, 0.15);
+  color: #222222;
+  border: 4px solid #222222; /* cinza escuro */
+  box-shadow: 2px 5px 0px #000000; /* sombra pixelada */
+
+}
+
+.contact-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.cute-retro-folder {
+  display: block;
+  text-align: center;
+  color: #222222;
+  text-decoration: none;
+}
+
+.contact-icons {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+
+.icon-button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  color: #4e7c59;
+  font-weight: bold;
+  transition: color 0.3s ease, transform 0.3s ease;
+  text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.1);
+}
+
+.icon-button i {
+  font-size: 60px;
+  margin-bottom: 8px;
+}
+
+.icon-button:hover {
+  color: #b4d7a8; /* verde claro no hover */
+  transform: translateY(-5px);
+  text-shadow: 2px 5px 0px #222222;
+}
+
+/* --- Footer --- */
+footer {
+  background-color: #222222; 
+  backdrop-filter: blur(8px);
+  text-align: center;
+  padding: 15px 20px;
+  border-top: 4px solid #4e7c59; 
+  box-shadow: 0 -5px 10px rgba(0, 0, 0, 0.4);
+  margin-top: 20px;
+  height: 80px;
+ 
+}
+
+footer p {
+  margin: 5px 0;
+  font-size: 8pt;
+  color: var(--cor-clara); 
+  text-shadow: 1px 1px 0 #222222;
+  line-height: 1.5;
+  
+}
+
+/* --- Media Queries para Responsividade --- */
+@media (max-width: 580px) {
+.hamburger {
+    display: block;
+    margin-left: auto;
+}
+
+.menu {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+}
+
+.menu.active {
+    display: flex;
+}
+
+.menu a {
+    background-color: #b4d7a8;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+header {
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+header h1 {
+  font-size: 1.6em;
+  margin: auto;
+  flex-grow: 1;
+  text-align: left;  
+}
+
+.info-overlay {
+  bottom: 100%;
+  transform: translateX(-50%);
+  font-size: 8px;
+}
+
+.projects h2 {
+  font-size: 1.3em;
+}
+
+/* Caixa estilo retro */
+.caixa-retro {
+  width: 380px;
+}
+
+.caixa-conteudo h2 {
+  font-size: 14px;
+}
+
+.caixa-conteudo p {
+  font-size: 5.8pt;
+}
+
+}

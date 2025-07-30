@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Neusa | Desenvolvimento Front-End</title>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+          
+</head>
+<body>
+  <div id="conteudo-principal">
+    <header>
+      <h1>NEUSA NEVES</h1>
+
+      <button class="hamburger" aria-label="Abrir menu">&#9776;</button>
+      <nav class="menu">
+        <a href="#inicio" class="btn">INICIO</a>
+        <a href="#projects" class="btn">PROJETOS</a>
+        <a href="#skills" class="btn">SKILLS</a>
+        <a href="#contact" class="btn">CONTACTO</a>
+      </nav>
+    </header>
+    
+    <section class="hero" id="inicio">
+      <div class="code-preview">
+        <img src="assets/code.jpg" alt="Code Preview" />
+      </div>
+      <div class="floating-img-container">
+        <img class="floating-img" src="assets/ilustrativa.png" alt="Chart" onclick="abrirCaixa()" />
+        <div class="info-overlay">Saiba mais sobre mim!</div>
+      </div>
+
+  <!-- Caixa retro com informações -->
+  <div id="caixa-info" class="caixa-retro">
+    <div class="caixa-conteudo">
+      <h2>Sobre Mim</h2>
+      <p>Sou formada em <mark class="meu-destaque">Gestão da Tecnologia da Informação</mark> e estou em transição de carreira para o desenvolvimento web, área pela qual sou apaixonada.</p>
+
+      <p>Atualmente, estou a fazer o curso de <mark class="meu-destaque">Desenvolvimento Front-End pela Anhanguera</mark> e venho me dedicado diariamente ao aprendizado de HTML5, CSS3, JavaScript, jQuery, Bootstrap e Tailwind CSS, além de estudar em cursos como o <mark class="meu-destaque">CS50W da HarvardX</mark> - estou a aprender  e o <mark class="meu-destaque">Curso em Vídeo</mark>.</p>
+
+      <p>Curso avançado de desenvolvimento web oferecido pela HarvardX, totalmente em inglês. Nele, estou aprendendo a criar aplicações completas com HTML, CSS, JavaScript, GIT, Python com Django, APIs REST, banco de dados (SQL) e deploy de sites.
+      Além do conteúdo técnico, o curso tem me ajudado a praticar e melhorar o inglês, expandindo meu vocabulário técnico e minha compreensão em projetos reais.</p>
+
+      <p>Já desenvolvi projetos como: Cronômetro digital; quadro Kanban; Clone do YouTube; Clone do Login github e portfólio interativo. Busco minha primeira oportunidade como desenvolvedora júnior ou estagiária, com muita vontade de aprender, crescer e contribuir com soluções reais.</p>
+
+      <button class="fechar" onclick="fecharCaixa()">Fechar</button>
+    </div>
+  </div>
+
+      <!-- Sobre mim -->
+      
+      <div class="profile-card">
+        <p>Desenvolvedora Front-end focada em criar interfaces funcionais e acessíveis, com domínio em HTML, CSS e JavaScript. Sempre aprendendo e apaixonada por tecnologia.</p>
+        <div class="icons">
+          <a href="" title="GitHub" target="_blank">
+            <i class="devicon-github-original"></i>
+          </a>
+          <a href="" target="_blank" title="LinkedIn">
+            <i class="devicon-linkedin-plain"></i>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <div class="projects-skills-container">
+      <section id="projects" class="projects">
+          <h2>Meus Projetos</h2>
+          <div class="project-grid">
+          <span id="caixa">
+            <img id="img-projeto" src="assets/calcimg.jpg" alt="Project 1" />
+              <p id="texto-projeto">
+              Projeto feito com HTML, CSS e JavaScript. Calcula o índice de massa corporal com base nos dados inseridos e exibe a classificação de forma automática.
+              </p>
+          </span>
+          <span id="caixa1">
+            <img id="img-projeto1" src="assets/kanb.jpg" alt="Project 2" />
+              <p id="texto-projeto1">
+              Criei um quadro Kanban com HTML, CSS e JavaScript. Ele permite mover tarefas entre colunas com drag and drop, tem um layout responsivo e visual agradável. Foi um projeto focado em usabilidade e organização.
+              </p>
+          </span>
+          <span id="caixa2">
+            <img id="img-projeto2" src="assets/github_clone.jpg" alt="Project 3" />
+              <p id="texto-projeto2">
+              Projeto front-end que reproduz a tela de login do GitHub, utilizando HTML, CSS e JavaScript puro. Conta com layout responsivo, tema escuro, validação de formulário e design fiel à interface original.
+              </p>
+          </span>
+          </div>
+      </section>
+    </div>
+    <div class="projects-skills-container-skill">
+      <section id="skills" class="skills">
+            <h2 class="title-skill">Minhas Skills</h2>
+            <div class="skills-bars">
+            <div class="bar">
+                <span>HTML</span>
+                <div class="progress html"></div>
+            </div>
+            <div class="bar">
+                <span>CSS</span>
+                <div class="progress css"></div>
+            </div>
+            <div class="bar">
+                <span>JavaScript</span>
+                <div class="progress js"></div>
+            </div>
+            <div class="bar">
+                <span>Python</span>
+                <div class="progress python"></div>
+            </div>
+            <div class="bar">
+                <span>PHP</span>
+                <div class="progress php"></div>
+            </div>
+            </div>
+      </section>
+    </div>
+
+  <!-- Área das SKILLS Extras -->
+    <section class="extra-skills">
+      <div class="skill-icon ">
+        <i class="devicon-tailwindcss-original"></i>
+        <span>Tailwind</span>
+      </div>
+      <div class="skill-icon">
+        <i class="devicon-bootstrap-plain"></i>
+        <span>Bootstrap</span>
+      </div>
+      <div class="skill-icon">
+        <i class="devicon-jquery-plain"></i>
+        <span>JQuery</span>
+      </div>
+      <div class="skill-icon">
+        <i class="devicon-react-original"></i>
+        <span>React</span>
+      </div>
+      <div class="skill-icon">
+        <i class="devicon-git-plain"></i>
+        <span>Git</span>
+      </div>
+    </section>
+
+    <!-- Área de contatos para envio de SMS -->
+    <section id="contact" class="contact">
+      <div class="contact-container">
+        <!-- Download de Curriculum -->
+        <a href="Curriculum - novo.pdf" download="Seu_Curriculo_Nome.pdf" class="cute-retro-folder"   aria-label="Baixar Currículo">
+          <div class="folder-top"></div>
+          <div class="folder-base">
+            <span class="folder-label">MEU CURRÍCULO</span>
+            <div class="document-icon">📄</div> 
+          </div>
+          <span class="folder-tooltip">Baixe o Currículo!</span>
+        </a>
+
+        <!-- Ícones de contato -->
+        <div class="contact-icons">
+          <!-- WhatsApp -->
+          <a href="https://wa.me/5511985837200" target="_blank" title="WhatsApp" class="icon-button">
+            <i class="ri-whatsapp-fill"></i>
+          </a>
+
+          <!-- Email -->
+          <a href="mailto://neusanneves13@gmail.com" target="_blank" title="E-mail" class="icon-button">
+            <i class="ri-mail-fill"></i>
+          </a>
+        </div>
+      </div>
+  </section>
+
+
+    <!-- Footer área do rodapé -->
+    <footer>
+      <div>
+        <p>&copy; 2025 Neusa Neves. Todos os direitos reservados</p>
+        <p>Desenvolvido com usando HTML5, CSS3, Juery e JavaScript</p>
+        <p>Sempre disponível para novos desafios!</p>
+      </div>
+    </footer>
+  </div>
+
+  <script src="js/script.js"></script>
+  <script>
+    
+  </script>
+  <noscript>Sorry, your browser does not support JavaScript!</noscript>
+</body>
+</html>
